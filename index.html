@@ -1,0 +1,119 @@
+<!--
+  1.build score box of 2 scores
+  2.then game page
+      a.choices
+      b.when user picks pcpicks
+      c.results page  to be shown with win or lose msg
+      d.if win or lose playagain btn
+      e.if tie  happens btn innertext must be chnaged to replay (js logc)
+  3.attach rules btn at bottom left
+  4.if user wins in a round 
+      a.next button must be shown near to rules
+  5.next clicked congo page must be shown
+      a.play again btn tobe there but it willbe of biggersize thasn 1
+      b.if it clicked the whole game and score ,should be showed
+
+  balance part: 
+  fixing local storage issue
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/rock.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>STONE PAPER SCISSORS</title>
+  </head>
+  <body>
+    <div class="container">
+      <!--this is container of score and game part-->
+      <header class="header">
+        <div>
+          <h1>ROCK</h1>
+          <h1>PAPER</h1>
+          <h1>SCISSORs</h1>
+        </div>
+        <div class="score-box1">
+          <!--scorebox firstone-->
+          <h2 class="score-title">computer</h2>
+          <h2 class="score-title">score</h2>
+          <div class="score-number1">0</div>
+        </div>
+        <div class="score-box2">
+          <!--scorebox firstone-->
+          <h2 class="score-title">your</h2>
+          <h2 class="score-title">score</h2>
+          <div class="score-number2">0</div>
+        </div>
+      </header>
+      <section class="game">
+        <button class="choice_btn" data-choice="paper">
+          <div class="choice paper">
+            <img src="./images/paper.png" alt="paper" />
+          </div>
+        </button>
+        <button class="choice_btn" data-choice="scissors">
+          <div class="choice scissors">
+            <img src="./images/scissors.png" alt="scissors" />
+          </div>
+        </button>
+        <button class="choice_btn" data-choice="rock">
+          <div class="choice rock">
+            <img src="./images/rock.png" alt="rock" />
+          </div>
+        </button>
+      </section>
+    </div>
+    <!--this is the results page and hidden by default if user picks choice then it will be shown by js logic-->
+    <section class="results hidden">
+      <h2 class="results_heading">you picked</h2>
+      <h2 class="results_heading">pc picked</h2>
+      <div class="results_result"></div>
+      <div class="results_winner hidden">
+        <h3 class="results_text"></h3>
+        <p class="results_text1"></p>
+        <button class="play_again">play again</button>
+      </div>
+      <div class="results_result"></div>
+    </section>
+    <!--this is congo page and hidden by default if user clicks next btn it will be shown-->
+    <div class="congratspage hidden">
+      <div class="cup">
+        <img src="./images/cup.png" alt="cup" />
+        <img src="./images/starsbg.png" alt="stars" class="stars" />
+      </div>
+      <div class="hurray">HURRAY!!</div>
+      <div class="win">YOU WON THE GAME</div>
+      <button class="playbtn2">PLAY AGAIN</button>
+    </div>
+
+    <footer>
+      <button class="cross hidden">X</button>
+      <div class="rulescard hidden">
+        <h4>game rules</h4>
+        <ul>
+          <li>
+            🟨 Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            🟨Agree ahead of time whether you’ll count off “rock, paper,
+            scissors, shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            🟨 Use rock, paper, scissors to settle minor decisions or simply
+            play to pass the time
+          </li>
+          <li>
+            🟨 If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+      <button class="nextbtn hidden">NEXT</button>
+      <button class="rulesbtn">RULES</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
